@@ -275,7 +275,7 @@ implements HttpSessionListener
 
 <font color=red>其实第一个区别我们在上面已经说过了， 但为了便于方便查找，以及保证文章结构清晰，我就再赘述一遍：重定向是浏览器客户端向Web应用服务器端发送两次请求，服务器端也向客户端返回两次处理结果，最后在浏览器地址栏中显示的是第二次访问的地址；而请求转发是浏览器向Web应用服务器端发送一次请求，服务器端也只向客户端返回一次处理结果，最后在浏览器地址栏中显示的是第一次访问的原地址。</font>
 
-<font color=red>第二个区别是页面的跳转，还记得上面介绍重定向时说过的response.sendRedirect("./target.jsp");吗？引号里也可以写https://www.baidu.com，这样第二次访问的页面就是百度了。所以第二个区别就是重定向对页面的跳转没有限制，可以是本Web应用系统的资源，也可以是其他Web应用的资源；而请求转发处理页面跳转时，跳转的新地址必须是本Web应用系统的资源，不可以访问其他Web应用的资源。</font>
+<font color=red>第二个区别是页面的跳转，还记得上面介绍重定向时说过的response.sendRedirect("./target.jsp");吗？引号里也可以写https://www.baidu.com, 这样第二次访问的页面就是百度了。所以第二个区别就是重定向对页面的跳转没有限制，可以是本Web应用系统的资源，也可以是其他Web应用的资源；而请求转发处理页面跳转时，跳转的新地址必须是本Web应用系统的资源，不可以访问其他Web应用的资源。</font>
 
 <font color=red>第三个区别是重定向无法在新的页面获取request.setAttribute("key", "value");中保存的数据，若非要使用<%= request.getAttribute("key") %>获取，则获取到的值为null;而请求转发就可以在新的页面获取到request.setAttribute("key", "value");中保存的数据。</font>
 
