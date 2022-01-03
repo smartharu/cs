@@ -50,7 +50,7 @@ C.使用重定向时可以在地址栏中看到转向后的URL
 
 A.Cookie是在客户端保存用户相关数据的
 B.Cookie可以保存字符串
-<font color=red>C.Cookie可以保存任意类型的对象</font>
+<font color="red">C.Cookie可以保存任意类型的对象</font>
 D.不建议在Cookie中保存比较重要或敏感的内容
 
 **11.css三种引入方式**
