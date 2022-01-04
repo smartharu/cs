@@ -1,10 +1,23 @@
 ## 选择 45分
 
-1.src 属性 标签
+**1.含有src属性的标签**
 
-2.
+<font color=red>img audio embed frame iframe input script source video</font>
 
-3.css样式选择器优先级描述正确的
+**2.嵌套**
+
+<font color=red>块元素与内联元素</font>
+
+**3.css样式选择器优先级描述正确的**
+
+* !important 优先级最高
+* 行内样式，在style属性里的样式
+* id选择器 #id
+* class选择器 .class
+* 标签选择器 
+* 通配符选择器 *
+* 浏览器自定义的属性和继承
+* 内联样式 > ID 选择器 > 类选择器 = 属性选择器 = 伪类选择器 > 标签选择器 = 伪元素选择器
 
 **4.给定一个Servlet的doGet代码片段如下**
 
@@ -21,7 +34,7 @@ B.String str=(String)request.getAttribute(“name”);
 
 C.Object str=request.getAttribute(“name”);
 
-D.无法取出来
+<font color=red>D.无法取出来</font>
 
 **5.javaee jsp el表达式${user.loginName}执行效果相同的是**
 
@@ -42,22 +55,39 @@ C.使用重定向时可以在地址栏中看到转向后的URL
 
 7.一个web对象中文件对象的根目录是哪一个
 
-8.以下代码执行效果为
+**8.以下代码执行效果为**
 
-9.js中哪种可以获取xml
+```jsp
+session.setAttribute("a","hello");
+<c:if test="${2 > 1}">
+    <c:out value=$a></c:out>
+</c:if>
+```
+
+<font color=red>页面输出hello</font>
+
+9.js中哪种可以获取xml节点
 
 **10.jsp中 关于Cookie理解错误的是**
 
 A.Cookie是在客户端保存用户相关数据的
 B.Cookie可以保存字符串
-<font color="red">C.Cookie可以保存任意类型的对象</font>
+<font color=red>C.Cookie可以保存任意类型的对象</font>
 D.不建议在Cookie中保存比较重要或敏感的内容
 
 **11.css三种引入方式**
 
-<font color=red>内联、内嵌、外联、导入</font>
+<font color=red>内联、内嵌、外联</font>
 
-12.userlist hashtable 并逐行显示其中的值
+**12.userlist hashtable 并逐行显示其中的值**
+
+```jsp
+<c:forEach var="entry" items="${userlist}">
+    ${entry.key} - ${entry.value}
+</c:forEach>
+```
+
+
 
 **13.在javaee中，servlet 实例化到消亡的生命周期描述正确的**
 
@@ -87,6 +117,7 @@ C.request
 
 ```jsp
 <c:forEach items="${session.list}" varStatus="i" var="item" >
+    ${item}
 </c:forEach>
 ```
 
@@ -117,18 +148,18 @@ x=undefined, y=100
 ```jsp
 <html>
 <% String str=null;%>
-str is <%=”str”%>
+str is <%="str"%>
 </html>
 ```
 
 A.转译期错误
 B.编译期错误
 C.运行后，浏览器上显示：str is null
-D.运行后，浏览器上显示：str is str
+<font color=red>D.运行后，浏览器上显示：str is str</font>
 
-22.session的说法正确的是
+**22.session的说法正确的是**
 
-A.session的属性可以在站点内多个页面跳转之间共享，但不可以在站点外共享。
+<font color=red>A.session的属性可以在站点内多个页面跳转之间共享，但不可以在站点外共享。</font>
 
 B.session能通过。
 
@@ -143,11 +174,11 @@ D.页面跳转的时候，session属性被清空。
 24.
 
 ```html
-<div id="mydiv">我是div <xx>我是xx</xx></div> 
+<div id="mydiv">我是div <span>我是xx</span></div> 
 document.getElementById(“mydiv”).children[0]
 ```
 
-<font color=red>object HTMLxxElement</font>
+<font color=red>object HTMLspanElement</font>
 
 **25.下面哪个servlet方法载入执行时只执行一次，负责对servlet进行初始化**
 
@@ -179,9 +210,9 @@ A.如果一个参数key有多个值，那么getParameterV alues(key)方法会返
 
 B.getParameter方法返回Object对象，使用前要强制类型转换：如String str=(String)request.getParameter(key)。
 
-C.如果一个参数key有多个值，那么getParameter(key)方法会返回空。
+<font color=red>C.如果一个参数key有多个值，那么getParameter(key)方法会返回空。</font>
 
-<font color=red>D.getParameter方法只用于接受post请求参数，接收get请求参数需要使用getQueryString方法。</font>
+D.getParameter方法只用于接受post请求参数，接收get请求参数需要使用getQueryString方法。
 
 29.Ajax请求服务器中json 数据格式哪一个是正确的()
 
@@ -191,7 +222,7 @@ string=name
 
 <font color=red>A.Cookie是Web服务器发送给客户端的一小段信息，客户端请求时，可以读取该信息发送到服务器端。</font>
 
-B.关闭浏览器意味着会话ID丢失，但所有与原会话关联的会话数据仍保留在服务器上，直至会话过期。
+<font color=red>B.关闭浏览器意味着会话ID丢失，但所有与原会话关联的会话数据仍保留在服务器上，直至会话过期。</font>
 
 <font color=red>C.在禁用Cookie时可以使用URL重写技术跟踪会话。</font>
 
@@ -252,7 +283,7 @@ span{text-align:center;display:block}
 <font color=red>监听session事件，首先创建一个监听器</font>
 
 ```java 
-implements HttpSessionListener
+public class Listener implements HttpSessionListener
 ```
 
 <font color=red>在web.xml加上这个</font>
@@ -273,13 +304,13 @@ implements HttpSessionListener
 
 <font color=red>**重定向和请求转发的区别：**</font>
 
-<font color=red>其实第一个区别我们在上面已经说过了， 但为了便于方便查找，以及保证文章结构清晰，我就再赘述一遍：重定向是浏览器客户端向Web应用服务器端发送两次请求，服务器端也向客户端返回两次处理结果，最后在浏览器地址栏中显示的是第二次访问的地址；而请求转发是浏览器向Web应用服务器端发送一次请求，服务器端也只向客户端返回一次处理结果，最后在浏览器地址栏中显示的是第一次访问的原地址。</font>
+<font color=red>第一个区别：重定向是浏览器客户端向Web应用服务器端发送两次请求，服务器端也向客户端返回两次处理结果，最后在浏览器地址栏中显示的是第二次访问的地址；而请求转发是浏览器向Web应用服务器端发送一次请求，服务器端也只向客户端返回一次处理结果，最后在浏览器地址栏中显示的是第一次访问的原地址。</font>
 
-<font color=red>第二个区别是页面的跳转，还记得上面介绍重定向时说过的response.sendRedirect("./target.jsp");吗？引号里也可以写https://www.baidu.com, 这样第二次访问的页面就是百度了。所以第二个区别就是重定向对页面的跳转没有限制，可以是本Web应用系统的资源，也可以是其他Web应用的资源；而请求转发处理页面跳转时，跳转的新地址必须是本Web应用系统的资源，不可以访问其他Web应用的资源。</font>
+<font color=red>第二个区别：就是重定向对页面的跳转没有限制，可以是本Web应用系统的资源，也可以是其他Web应用的资源；而请求转发处理页面跳转时，跳转的新地址必须是本Web应用系统的资源，不可以访问其他Web应用的资源。</font>
 
-<font color=red>第三个区别是重定向无法在新的页面获取request.setAttribute("key", "value");中保存的数据，若非要使用<%= request.getAttribute("key") %>获取，则获取到的值为null;而请求转发就可以在新的页面获取到request.setAttribute("key", "value");中保存的数据。</font>
+<font color=red>第三个区别：是重定向无法在新的页面获取request.setAttribute("key", "value");中保存的数据，若非要使用<%= request.getAttribute("key") %>获取，则获取到的值为null;而请求转发就可以在新的页面获取到request.setAttribute("key", "value");中保存的数据。</font>
 
-<font color=red>最后一个区别可以说是请求转发的一个特性：Web项目中WEB-INF文件夹是最安全的目录，该目录内的资源只能通过请求转发获取，重定向的方式无法获取!</font>
+<font color=red>第四个区别：可以说是请求转发的一个特性：Web项目中WEB-INF文件夹是最安全的目录，该目录内的资源只能通过请求转发获取，重定向的方式无法获取!</font>
 
 <font color=red>请求转发中，request作用域的值可以传递</font>
 
@@ -297,7 +328,6 @@ implements HttpSessionListener
 <input class = 'check' type="checkbox">
 <input id="checkAll" type="button" value="全选">
 <input id="unCheckAll" type="button" value="全不">
-<input id="reverseCheck" type="button" value="反选">
 ```
 
 ```javascript
@@ -314,7 +344,6 @@ implements HttpSessionListener
   //1.获取页面元素
   var checkAll = document.getElementById('checkAll');//全选
   var unCheckAll = document.getElementById('unCheckAll');//全不选
-  var reverseCheck = document.getElementById('reverseCheck');//反选
   var checkList = document.getElementsByClassName('check');//选择框列表
   //2.注册事件
   //2.1 全选
@@ -331,18 +360,6 @@ implements HttpSessionListener
       checkList[i].checked = false;
     }
   }
-  //2.3 反选
-  reverseCheck.onclick = function(){
-    //3.事件处理:让每一个选择框的checked属性与自身相反
-    for(var i = 0;i<checkList.length;i++){
-      checkList[i].checked = !checkList[i].checked;//逻辑非取反
-      // if (checkList[i].checked == true){
-      //   checkList[i].checked = false;
-      // }else{//false
-      //   checkList[i].checked = true;
-      // }
-    }
-  }
 </script>
 ```
 
@@ -357,9 +374,8 @@ implements HttpSessionListener
 验证所有请求的url路径，排除log.jsp和log.do地址
 
 ```java
-package com.student.filter;  
-  
-import com.student.entity.Users;  
+package filter;  
+
 import com.sun.deploy.net.HttpRequest;  
   
 import javax.servlet.*;  
@@ -371,33 +387,25 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;  
 import java.io.PrintWriter;  
   
-/** 
- * @Description 
- * @Author 单继重 
- * @Date 2016/10/24 10:19 
- */  
-@WebFilter(filterName = "LoginFilter")  
 public class LoginFilter implements Filter {  
     public void destroy() {  
     }  
   
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {  
-        //chain.doFilter(req, resp);  
         HttpServletRequest request = (HttpServletRequest)req;  
         HttpServletResponse response = (HttpServletResponse)resp;  
         request.setCharacterEncoding("UTF-8");  
         response.setContentType("text/html;charset=UTF-8");  
-        HttpSession session = request.getSession();  
-        PrintWriter out = response.getWriter();  
-        Users user = (Users)session.getAttribute("user");  
+        HttpSession session = request.getSession();
+        String path = req.getRequestURI();
+        String user = (String)session.getAttribute("user");  
+        if(path.indexOf("./login.do") > -1 || path.indexOf("./login.jsp") > -1){
+            chain.doFilter(request, response); 
+        }
         if(user != null){  
             chain.doFilter(request,response);  
         } else{  
-            out.println("您还未登陆，三秒钟后跳转至登录页面");  
-            //out.println("<script language='javascript'>alert('你还未登录');");  
-            response.setHeader("refresh","3;/pages/users/login.jsp");  
-            //response.sendRedirect("/pages/users/login.jsp");  
-            //request.getRequestDispatcher("/pages/users/login.jsp").forward(request,response);  
+            response.sendRedirect("login.jsp");  
         }  
     }  
   
@@ -411,23 +419,11 @@ public class LoginFilter implements Filter {
 ```xml
 <filter>  
         <filter-name>LoginFilter</filter-name>  
-        <filter-class>com.student.filter.LoginFilter</filter-class>  
-    </filter>  
-    <filter-mapping>  
+        <filter-class>filter.LoginFilter</filter-class>  
+</filter>  
+<filter-mapping>  
         <filter-name>LoginFilter</filter-name>  
-        <url-pattern>/pages/student/*</url-pattern>  
-    </filter-mapping>  
-    <filter-mapping>  
-        <filter-name>LoginFilter</filter-name>  
-        <url-pattern>/pages/users/update.jsp</url-pattern>  
-    </filter-mapping>  
-    <filter-mapping>  
-        <filter-name>LoginFilter</filter-name>  
-        <url-pattern>/index.jsp</url-pattern>  
-    </filter-mapping>  
-    <filter-mapping>  
-        <filter-name>LoginFilter</filter-name>  
-        <url-pattern>/servlet/StudentServlet</url-pattern>  
-    </filter-mapping>  
+        <url-pattern>/*</url-pattern>  
+</filter-mapping>  
+   
 ```
-
